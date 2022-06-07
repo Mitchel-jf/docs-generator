@@ -7,6 +7,7 @@ Future<void> writeEndPoints({
   required int end,
   required List<String> lines,
   required IOSink sink,
+  required String groupName,
 }) async {
   for (int i = start; i < end; i++) {
     var linesForward = lines.sublist(i + 1);
@@ -16,7 +17,7 @@ Future<void> writeEndPoints({
     String endPoint = getEndPoint(lines[i]);
     if (i == start) sink.writeln(startingDocs);
     sink.writeln(endPointDocs(endPoint,
-        groupName: "giftcard-admin",
+        groupName: groupName,
         lastComma: isLastLine ? "" : ",",
         parameters: (await getParamsDocs(lines, i)).toString()));
   }

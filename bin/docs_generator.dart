@@ -5,7 +5,7 @@ import 'dart:io';
 import '../src/src.dart';
 
 void main(List<String> args) async {
-  if (args.isEmpty) throw "The path must not be empty";
+  if (args.isEmpty || args.length < 3) throw "pass the appropriate arguments";
   File doc = File(args[0]);
   Stream<String> linesStream =
       doc.openRead().transform(utf8.decoder).transform(LineSplitter());
@@ -17,7 +17,13 @@ void main(List<String> args) async {
 
   File yamlFile = File('${args[1]}.json');
   var sink = yamlFile.openWrite();
-  await writeEndPoints(start: start, end: end, lines: lines, sink: sink);
+  await writeEndPoints(
+    start: start,
+    end: end,
+    lines: lines,
+    sink: sink,
+    groupName: args[2],
+  );
 
   sink.close();
 

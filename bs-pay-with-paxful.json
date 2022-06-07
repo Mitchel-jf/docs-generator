@@ -1,0 +1,546 @@
+{
+  "/v1/giftcard-admin/send/email": {
+    "post": {
+      "operationId": "giftcard-admin-send-email",
+      "x-google-backend": {
+        "address": "baseURl/v1/send/email"
+      },
+      "parameters": [
+        {
+    "in": "body",
+    "name": "email",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+, {
+    "in": "body",
+    "name": "subject",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+, {
+    "in": "body",
+    "name": "extra",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+, {
+    "in": "body",
+    "name": "type",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+,
+        {
+          "in": "header",
+          "name": "authtoken",
+          "type": "string",
+          "required": true
+        },
+        {
+          "in": "header",
+          "name": "from",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Failed - Client side error"
+        },
+        "404": {
+          "description": "Failed - URL not found"
+        },
+        "500": {
+          "description": "Failed - Server side error"
+        },
+        "default": {
+          "description": "Unknown error"
+        }
+      }
+    }
+  },
+
+  "/v1/giftcard-admin/send/text/:type": {
+    "post": {
+      "operationId": "giftcard-admin-send-text-:type",
+      "x-google-backend": {
+        "address": "baseURl/v1/send/text/:type"
+      },
+      "parameters": [
+        {
+    "in": "body",
+    "name": "countryCode",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+, {
+    "in": "body",
+    "name": "phone",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+, {
+    "in": "body",
+    "name": "message",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+,
+        {
+          "in": "header",
+          "name": "authtoken",
+          "type": "string",
+          "required": true
+        },
+        {
+          "in": "header",
+          "name": "from",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Failed - Client side error"
+        },
+        "404": {
+          "description": "Failed - URL not found"
+        },
+        "500": {
+          "description": "Failed - Server side error"
+        },
+        "default": {
+          "description": "Unknown error"
+        }
+      }
+    }
+  },
+
+  "/v1/giftcard-admin/register/user/push-notification": {
+    "post": {
+      "operationId": "giftcard-admin-register-user-push-notification",
+      "x-google-backend": {
+        "address": "baseURl/v1/register/user/push-notification"
+      },
+      "parameters": [
+        {
+    "in": "body",
+    "name": "regToken",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+, {
+    "in": "body",
+    "name": "email",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+,
+        {
+          "in": "header",
+          "name": "authtoken",
+          "type": "string",
+          "required": true
+        },
+        {
+          "in": "header",
+          "name": "from",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Failed - Client side error"
+        },
+        "404": {
+          "description": "Failed - URL not found"
+        },
+        "500": {
+          "description": "Failed - Server side error"
+        },
+        "default": {
+          "description": "Unknown error"
+        }
+      }
+    }
+  },
+
+  "/v1/giftcard-admin/register/admin/push-notification": {
+    "post": {
+      "operationId": "giftcard-admin-register-admin-push-notification",
+      "x-google-backend": {
+        "address": "baseURl/v1/register/admin/push-notification"
+      },
+      "parameters": [
+        {
+    "in": "body",
+    "name": "regToken",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+, {
+    "in": "body",
+    "name": "email",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+, {
+    "in": "body",
+    "name": "type",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+,
+        {
+          "in": "header",
+          "name": "authtoken",
+          "type": "string",
+          "required": true
+        },
+        {
+          "in": "header",
+          "name": "from",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Failed - Client side error"
+        },
+        "404": {
+          "description": "Failed - URL not found"
+        },
+        "500": {
+          "description": "Failed - Server side error"
+        },
+        "default": {
+          "description": "Unknown error"
+        }
+      }
+    }
+  },
+
+  "/v1/giftcard-admin/send/user/push-notification": {
+    "post": {
+      "operationId": "giftcard-admin-send-user-push-notification",
+      "x-google-backend": {
+        "address": "baseURl/v1/send/user/push-notification"
+      },
+      "parameters": [
+        {
+    "in": "body",
+    "name": "email",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+, {
+    "in": "body",
+    "name": "title",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+, {
+    "in": "body",
+    "name": "body",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+, {
+    "in": "body",
+    "name": "largeIcon",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+, {
+    "in": "body",
+    "name": "bigPicture",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+,
+        {
+          "in": "header",
+          "name": "authtoken",
+          "type": "string",
+          "required": true
+        },
+        {
+          "in": "header",
+          "name": "from",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Failed - Client side error"
+        },
+        "404": {
+          "description": "Failed - URL not found"
+        },
+        "500": {
+          "description": "Failed - Server side error"
+        },
+        "default": {
+          "description": "Unknown error"
+        }
+      }
+    }
+  },
+
+  "/v1/giftcard-admin/send/admin/push-notification": {
+    "post": {
+      "operationId": "giftcard-admin-send-admin-push-notification",
+      "x-google-backend": {
+        "address": "baseURl/v1/send/admin/push-notification"
+      },
+      "parameters": [
+        {
+    "in": "body",
+    "name": "title",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+, {
+    "in": "body",
+    "name": "body",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+, {
+    "in": "body",
+    "name": "largeIcon",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+, {
+    "in": "body",
+    "name": "bigPicture",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+, {
+    "in": "body",
+    "name": "type",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+,
+        {
+          "in": "header",
+          "name": "authtoken",
+          "type": "string",
+          "required": true
+        },
+        {
+          "in": "header",
+          "name": "from",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Failed - Client side error"
+        },
+        "404": {
+          "description": "Failed - URL not found"
+        },
+        "500": {
+          "description": "Failed - Server side error"
+        },
+        "default": {
+          "description": "Unknown error"
+        }
+      }
+    }
+  },
+
+  "/v1/giftcard-admin/remove/user/push-notification": {
+    "post": {
+      "operationId": "giftcard-admin-remove-user-push-notification",
+      "x-google-backend": {
+        "address": "baseURl/v1/remove/user/push-notification"
+      },
+      "parameters": [
+        {
+    "in": "body",
+    "name": "email",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+,
+        {
+          "in": "header",
+          "name": "authtoken",
+          "type": "string",
+          "required": true
+        },
+        {
+          "in": "header",
+          "name": "from",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Failed - Client side error"
+        },
+        "404": {
+          "description": "Failed - URL not found"
+        },
+        "500": {
+          "description": "Failed - Server side error"
+        },
+        "default": {
+          "description": "Unknown error"
+        }
+      }
+    }
+  },
+
+  "/v1/giftcard-admin/remove/admin/push-notification": {
+    "post": {
+      "operationId": "giftcard-admin-remove-admin-push-notification",
+      "x-google-backend": {
+        "address": "baseURl/v1/remove/admin/push-notification"
+      },
+      "parameters": [
+        {
+    "in": "body",
+    "name": "email",
+    "description": "body value description",
+    "required": true,
+    "schema": {
+      "type": "string"
+    }
+  }
+,
+        {
+          "in": "header",
+          "name": "authtoken",
+          "type": "string",
+          "required": true
+        },
+        {
+          "in": "header",
+          "name": "from",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Failed - Client side error"
+        },
+        "404": {
+          "description": "Failed - URL not found"
+        },
+        "500": {
+          "description": "Failed - Server side error"
+        },
+        "default": {
+          "description": "Unknown error"
+        }
+      }
+    }
+  }
+
+}
