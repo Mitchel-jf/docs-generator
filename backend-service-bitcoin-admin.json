@@ -1,0 +1,127 @@
+{
+  "/v1/bitcoin-admin/process/transaction": {
+    "post": {
+      "operationId": "bitcoin-admin-process-transaction",
+      "description": "description of the endpoint",
+      "x-google-backend": {
+        "address": "baseURl/v1/process/transaction"
+      },
+      "parameters": [
+        {
+          "in": "body",
+          "name": "transactionPath",
+          "description": "body value description",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "body",
+          "name": "coinRate",
+          "description": "body value description",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "body",
+          "name": "amountToPay",
+          "description": "body value description",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "body",
+          "name": "amount",
+          "description": "body value description",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "header",
+          "name": "authtoken",
+          "type": "string",
+          "required": true
+        },
+        {
+          "in": "header",
+          "name": "from",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Failed - Client side error"
+        },
+        "404": {
+          "description": "Failed - URL not found"
+        },
+        "500": {
+          "description": "Failed - Server side error"
+        },
+        "default": {
+          "description": "Unknown error"
+        }
+      }
+    }
+  },
+  "/v1/bitcoin-admin/reject/transaction": {
+    "post": {
+      "operationId": "bitcoin-admin-reject-transaction",
+      "description": "description of the endpoint",
+      "x-google-backend": {
+        "address": "baseURl/v1/reject/transaction"
+      },
+      "parameters": [
+        {
+          "in": "body",
+          "name": "transactionPath",
+          "description": "body value description",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "header",
+          "name": "authtoken",
+          "type": "string",
+          "required": true
+        },
+        {
+          "in": "header",
+          "name": "from",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Failed - Client side error"
+        },
+        "404": {
+          "description": "Failed - URL not found"
+        },
+        "500": {
+          "description": "Failed - Server side error"
+        },
+        "default": {
+          "description": "Unknown error"
+        }
+      }
+    }
+  }
+}

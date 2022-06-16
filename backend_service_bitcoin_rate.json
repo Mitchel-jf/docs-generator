@@ -1,0 +1,228 @@
+{
+  "/v1/bitcoin-rate/get/rate": {
+    "get": {
+      "operationId": "bitcoin-rate-get-rate",
+      "description": "get bitcoin rate",
+      "x-google-backend": {
+        "address": "baseURl/v1/get/rate"
+      },
+      "parameters": [
+        {
+          "in": "header",
+          "name": "authtoken",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Failed - Client side error"
+        },
+        "404": {
+          "description": "Failed - URL not found"
+        },
+        "500": {
+          "description": "Failed - Server side error"
+        },
+        "default": {
+          "description": "Unknown error"
+        }
+      }
+    }
+  },
+  "/v1/bitcoin-rate/set/rate": {
+    "post": {
+      "operationId": "bitcoin-rate-set-rate",
+      "description": "set bitcoin rate",
+      "x-google-backend": {
+        "address": "baseURl/v1/set/rate"
+      },
+      "parameters": [
+        {
+          "in": "body",
+          "name": "min",
+          "description": "minimum bitcoin value",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "in": "body",
+          "name": "max",
+          "description": "max bitcoin value",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "in": "body",
+          "name": "rate",
+          "description": "rate for bitcoin range",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "in": "header",
+          "name": "authtoken",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Failed - Client side error"
+        },
+        "404": {
+          "description": "Failed - URL not found"
+        },
+        "500": {
+          "description": "Failed - Server side error"
+        },
+        "default": {
+          "description": "Unknown error"
+        }
+      }
+    }
+  },
+  "/v1/bitcoin-rate/edit/rate": {
+    "post": {
+      "operationId": "bitcoin-rate-edit-rate",
+      "description": "edit bitcoin rate",
+      "x-google-backend": {
+        "address": "baseURl/v1/edit/rate"
+      },
+      "parameters": [
+        {
+          "in": "body",
+          "name": "rateKey",
+          "description": "rate key or index of rate to be edited",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "in": "body",
+          "name": "min",
+          "description": "minimum bitcoin value",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "in": "body",
+          "name": "max",
+          "description": "maximum bitcoin value",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "in": "body",
+          "name": "rate",
+          "description": "rate for bitcoin range",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "in": "header",
+          "name": "authtoken",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Failed - Client side error"
+        },
+        "404": {
+          "description": "Failed - URL not found"
+        },
+        "500": {
+          "description": "Failed - Server side error"
+        },
+        "default": {
+          "description": "Unknown error"
+        }
+      }
+    }
+  },
+  "/v1/bitcoin-rate/delete/rate": {
+    "delete": {
+      "operationId": "bitcoin-rate-delete-rate",
+      "description": "delete bitcoin rate",
+      "x-google-backend": {
+        "address": "baseURl/v1/delete/rate"
+      },
+      "parameters": [
+        {
+          "in": "body",
+          "name": "min",
+          "description": "minimum bitcoin value",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "in": "body",
+          "name": "max",
+          "description": "maximum bitcoin value",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "in": "body",
+          "name": "rate",
+          "description": "rate for bitcoin range",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "in": "header",
+          "name": "authtoken",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Failed - Client side error"
+        },
+        "404": {
+          "description": "Failed - URL not found"
+        },
+        "500": {
+          "description": "Failed - Server side error"
+        },
+        "default": {
+          "description": "Unknown error"
+        }
+      }
+    }
+  }
+}

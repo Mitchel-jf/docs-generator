@@ -1,0 +1,283 @@
+{
+  "/v1/giftcard-rate/get/rate": {
+    "post": {
+      "operationId": "giftcard-rate-get-rate",
+      "description": "Get gift card rate",
+      "x-google-backend": {
+        "address": "baseURl/v1/get/rate"
+      },
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Failed - Client side error"
+        },
+        "404": {
+          "description": "Failed - URL not found"
+        },
+        "500": {
+          "description": "Failed - Server side error"
+        },
+        "default": {
+          "description": "Unknown error"
+        }
+      }
+    }
+  },
+  "/v1/giftcard-rate/set/rate": {
+    "post": {
+      "operationId": "giftcard-rate-set-rate",
+      "description": "Set gift card rate",
+      "x-google-backend": {
+        "address": "baseURl/v1/set/rate"
+      },
+      "parameters": [
+        {
+          "in": "body",
+          "name": "cardName",
+          "description": "name of the card to be set",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "body",
+          "name": "country",
+          "description": "the country of the card to be set",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "body",
+          "name": "min",
+          "description": "the minimum amount of the card to be set",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "in": "body",
+          "name": "max",
+          "description": "the maximum amount of the card to be set",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "in": "body",
+          "name": "rate",
+          "description": "the rate of the card to be set",
+          "required": true,
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "in": "header",
+          "name": "authtoken",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Failed - Client side error"
+        },
+        "404": {
+          "description": "Failed - URL not found"
+        },
+        "500": {
+          "description": "Failed - Server side error"
+        },
+        "default": {
+          "description": "Unknown error"
+        }
+      }
+    }
+  },
+  "/v1/giftcard-rate/edit/rate": {
+    "post": {
+      "operationId": "giftcard-rate-edit-rate",
+      "description": "Edit gift card rate",
+      "x-google-backend": {
+        "address": "baseURl/v1/edit/rate"
+      },
+      "parameters": [
+        {
+          "in": "body",
+          "name": "addNewRate",
+          "description": "whether to add new rate or edit existing rate",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "body",
+          "name": "cardName",
+          "description": "the name of the card to be edited",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "body",
+          "name": "country",
+          "description": "the country of the card to be edited",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "body",
+          "name": "min",
+          "description": "minimum amount of the card to be edited",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "in": "body",
+          "name": "max",
+          "description": "maximum amount of the card to be edited",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "in": "body",
+          "name": "rateKey",
+          "description": "the key or index of the rate to be edited",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "in": "body",
+          "name": "rate",
+          "description": "rate of the card to be edited",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "header",
+          "name": "authtoken",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Failed - Client side error"
+        },
+        "404": {
+          "description": "Failed - URL not found"
+        },
+        "500": {
+          "description": "Failed - Server side error"
+        },
+        "default": {
+          "description": "Unknown error"
+        }
+      }
+    }
+  },
+  "/v1/giftcard-rate/delete/rate": {
+    "post": {
+      "operationId": "giftcard-rate-delete-rate",
+      "description": "Delete gift card rate",
+      "x-google-backend": {
+        "address": "baseURl/v1/delete/rate"
+      },
+      "parameters": [
+        {
+          "in": "body",
+          "name": "cardName",
+          "description": "name of the card to be deleted",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "body",
+          "name": "country",
+          "description": "country of the card to be deleted",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "body",
+          "name": "min",
+          "description": "minimum amount of the card to be deleted",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "in": "body",
+          "name": "max",
+          "description": "maximum amount of the card to be deleted",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "in": "body",
+          "name": "rate",
+          "description": "rate of the card to be deleted",
+          "required": true,
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "in": "header",
+          "name": "authtoken",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "400": {
+          "description": "Failed - Client side error"
+        },
+        "404": {
+          "description": "Failed - URL not found"
+        },
+        "500": {
+          "description": "Failed - Server side error"
+        },
+        "default": {
+          "description": "Unknown error"
+        }
+      }
+    }
+  }
+}

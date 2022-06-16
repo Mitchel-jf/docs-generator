@@ -14,6 +14,7 @@ String endPointDocs(
   "/v1/$groupName$endPoint": {
     "$method": {
       "operationId": "$groupName-$hyphenString",
+      "description": "description of the endpoint",
       "x-google-backend": {
         "address": "baseURl/v1$endPoint"
       },
